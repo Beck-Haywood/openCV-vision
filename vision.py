@@ -51,4 +51,7 @@ class Vision:
             self.templates[name],
             threshold
         )
+        #for template in templates:
+            #print(template)
+        cv2imread()
 
