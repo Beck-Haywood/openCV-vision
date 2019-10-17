@@ -25,14 +25,14 @@ class Vision:
         return img[:, :, ::-1]
     def take_screenshot(self):
         screen_shot = self.screen.grab(self.monitor)
-        print(type(screen_shot))
+        #print(type(screen_shot))
         img = Image.frombytes('RGB', screen_shot.size, screen_shot.rgb)
         #img = Image.open('static/images/leagueclient1.png') #was 'static/images/clientshot2.jpeg'
         img = numpy.array(img, dtype='f')
-        print(img.shape)
+        #print(img.shape)
         #img = self.convert_rgb_to_bgr(img)
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        print(img.shape[::-1])
+        #print(img.shape[::-1])
 
         return img_gray #was img_gray
     def refresh_frame(self):
@@ -65,11 +65,11 @@ class Vision:
             top_left = max_loc
         bottom_right = (top_left[0] + w, top_left[1] + h)
         cv2.rectangle(img,top_left, bottom_right, 255, 2)
-       # plt.subplot(121),plt.imshow(res,cmap = 'gray')
-       # plt.title('Matching Result'), plt.xticks([]), plt.yticks([])
-       # plt.subplot(122),plt.imshow(img,cmap = 'gray')
-       # plt.title('Detected Point'), plt.xticks([]), plt.yticks([])
-       # plt.show()
+        #plt.subplot(121),plt.imshow(res,cmap = 'gray')
+        #plt.title('Matching Result'), plt.xticks([]), plt.yticks([])
+        #plt.subplot(122),plt.imshow(img,cmap = 'gray')
+        #plt.title('Detected Point'), plt.xticks([]), plt.yticks([])
+        #plt.show()
         matches = numpy.where(res >= threshold)
         return matches
     def find_template(self, name, image=None, threshold=0.9):

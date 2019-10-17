@@ -62,6 +62,7 @@ def find_playbutton():
     print(numpy.shape(matches)[1] >= 1)
    
 #find_playbutton()
-
+#print('test')
 game.run()
+#print('testt')
 
