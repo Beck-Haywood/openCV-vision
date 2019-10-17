@@ -12,7 +12,8 @@ class Vision:
             'co-op-vs-ai': 'static/images/CO-OP-VS-AI.png',
             'beginner-bots': 'static/images/beginner-bots.png',
             'confirm' : 'static/images/confirm.png',
-            'find-game' : 'static/images/find-game.png'
+            'find-game' : 'static/images/find-game.png',
+            'play': 'static/images/play.png'
         }
 
         self.templates = { k: cv2.imread(v, 0) for (k, v) in self.static_templates.items() }
