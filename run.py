@@ -1,10 +1,11 @@
 from cv2 import cv2
 import numpy
-#from vision import Vision
+from vision import Vision
 import time
 import os
-from tkinter import *
+#from tkinter import *
 from PIL import ImageTk, Image
+'''
 def display_example():
     img1.place(x=0,y=0)
     img1.pack()
@@ -41,14 +42,19 @@ button2 = Button(window,text="Quit", width = 5, command=lambda : exit())
 button2.place(x=120,y=35)
 button1.place(x=5,y=35)
 window.mainloop()
+'''
+vision = Vision()
 
-#vision = Vision()
+def find_playbutton():
+    
+    #matches = vision.find_template('play-game', image=None)
+    #matches = vision.find_template('co-op-vs-ai', image=None)
+    #matches = vision.find_template('beginner-bots', image=None)
+    matches = vision.find_template('confirm', image=None)
+    #matches = vision.find_template('find-game', image=None)
 
-#def find_playbutton():
-#    matches = vision.find_template('play-game',vision.frame, threshold=0.75)
-#    print(numpy.shape(matches)[1] >= 1)
 
-#find_playbutton()
-#cv2.imshow('play_game.png', wat)
-cv2.destroyAllWindows()
-#print(wat)
+    print(numpy.shape(matches)[1] >= 1)
+   
+find_playbutton()
+
