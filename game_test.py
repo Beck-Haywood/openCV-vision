@@ -33,10 +33,11 @@ class Game:
         
         self.vision.refresh_frame()
         matches = self.vision.find_template('play')
-        x = matches[1][0]
-        y = matches[0][0] 
+        x = matches[1][0] #-40 #60
+        y = matches[0][0] #-30 #50
         print(matches)
-        self.controller.smooth_move_mouse(x, y)
+        #self.controller.smooth_move_mouse(x, y)
+        self.controller.mouse_move(x, y)
         self.controller.left_mouse_click()
         self.controller.left_mouse_click()
         #self.vision.refresh_frame()
