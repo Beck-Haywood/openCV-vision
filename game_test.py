@@ -9,20 +9,6 @@ class Game:
     def __init__(self, vision, controller):
         self.vision = vision
         self.controller = controller
-    # def can_see_object(self, template, threshold=0.9):
-    #     matches = self.vision.find_template(template, threshold=threshold)
-    #     return np.shape(matches)[1] >= 1
-
-    # def click_object(self, template):#offset=(0, 0)
-    #     matches = self.vision.find_template(template)
-
-    #     x = matches[1]#[0] #+ offset[0]
-    #     y = matches[0]#[0] #+ offset[1]
-
-    #     self.controller.move_mouse(x, y)
-    #     self.controller.left_mouse_click()
-
-    #     time.sleep(0.5)
     def run(self):
         '''
         bot_run = True
@@ -33,42 +19,65 @@ class Game:
         
         self.vision.refresh_frame()
         matches = self.vision.find_template('play')
-        x = matches[1][0] #-40 #60
-        y = matches[0][0] #-30 #50
+        x = matches[1][0] -65 #60
+        y = matches[0][0] -40 #50
         print(matches)
         #self.controller.smooth_move_mouse(x, y)
         self.controller.mouse_move(x, y)
         self.controller.left_mouse_click()
         self.controller.left_mouse_click()
-        #self.vision.refresh_frame()
+
+
+        time.sleep(2    )
+        self.vision.refresh_frame()
         #self.controller.smooth_move_mouse(10, 10)
-        #time.sleep(2)
-        #self.controller.smooth_move_mouse(100, 100)
-        #print(self.controller.mouse.position)
+        time.sleep(1)
+        matches = self.vision.find_template('co-op-vs-ai')
+        x = matches[1][0] -80 #60
+        y = matches[0][0] -125 #50
+        print(matches)
+        self.controller.mouse_move(x, y)
+        self.controller.left_mouse_click()
 
-        #time.sleep(2000)
-        #matches = self.vision.find_template('co-op-vs-ai')
-        #x = matches[1][0] - 60
-        #y = matches[0][0] - 50
-        #self.controller.move_mouse(x, y)
-        #self.controller.left_mouse_click()
+
+        time.sleep(0.5)
+        self.vision.refresh_frame()
+        #self.controller.smooth_move_mouse(10, 10)
+        time.sleep(1)
+        matches = self.vision.find_template('beginner-bots')
+        x = matches[1][0]  -280#60
+        y = matches[0][0] - 660
+        print(matches)
+        self.controller.mouse_move(x, y)
+        self.controller.left_mouse_click()
+
+        time.sleep(0.5)
+        self.vision.refresh_frame()
+        #self.controller.smooth_move_mouse(10, 10)
+        time.sleep(1)
+        matches = self.vision.find_template('confirm')
+        x = matches[1][0]  -480#60
+        y = matches[0][0] - 830
+        print(matches)
+        self.controller.mouse_move(x, y)
+        self.controller.left_mouse_click()
+        # #find match
+        # time.sleep(2)
+        # self.controller.left_mouse_click()
+
+
+        #time.sleep(0.5)
+        #self.vision.refresh_frame()
+        #matches = self.vision.find_template('accept', threshold = 0.95)
+        #while matches == False:
+        #    self.vision.refresh_frame()
+        #    matches = self.vision.find_template('accept')
+        #    time.sleep(2)
+        #print('exited loop?')
+        #x = matches[1][0]  -490
+        #y = matches[0][0] - 830
+        #print(matches)
+       # self.controller.mouse_move(x, y)
+       # self.controller.left_mouse_click()
         
-       # self.vision.refresh_frame()
-       # matches = self.vision.find_template('play-game')
-       # print(np.shape(matches)[1] >= 1)
-       # time.sleep(0.5)
-       # self.vision.refresh_frame()
-       # matches = self.vision.find_template('play-game')
-       # print(np.shape(matches)[1] >= 1)
-        
-
-
-
-
-
-
-
-            
-
-
-
+       

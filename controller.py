@@ -37,7 +37,12 @@ class Controller:
     #        self.mouse.position = current_x, current_y    
     #        current_x += x_delta
     #        current_y += y_delta
+    def set_mouse_position(self, x, y):
+        self.mouse.position = (int(x), int(y))
     def mouse_move(self, x, y):
+        #current_x = self.mouse.position[0]
+        #current_y = self.mouse.position[1]
+        #self.mouse.position = current_x, current_y
         self.mouse.position = x, y
 
 

@@ -13,7 +13,8 @@ class Vision:
             'beginner-bots': 'static/images/beginner-bots.png',
             'confirm' : 'static/images/confirm.png',
             'find-game' : 'static/images/find-game.png',
-            'play': 'static/images/play.png'
+            'play': 'static/images/play.png',
+            'accept': 'static/images/accept.png'
         }
 
         self.templates = { k: cv2.imread(v, 0) for (k, v) in self.static_templates.items() }
@@ -106,24 +107,4 @@ class Vision:
         
        
         return self.match_template(image, self.templates[name], threshold)
-        
-    '''
-    def scaled_find_template(self, name, image=None, threshold=0.9, scales=[1.0, 0.9, 1.1]):
-        if image is None:
-            if self.frame is None:
-                self.refresh_frame()
-
-            image = self.frame
-        
-        initial_template = self.templates[name]
-        for scale in scales:
-            scaled_template = cv2.resize(initial_template, (0,0), fx=scale, fy=scale)
-            matches = self.match_template(
-                image,
-                scaled_template,
-                threshold
-            )
-            if np.shape(matches)[1] >= 1:
-                return matches
-        return matches
-        '''
+    
