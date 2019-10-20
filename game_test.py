@@ -28,7 +28,7 @@ class Game:
         self.controller.left_mouse_click()
 
 
-        time.sleep(2    )
+        time.sleep(3)
         self.vision.refresh_frame()
         #self.controller.smooth_move_mouse(10, 10)
         time.sleep(1)
@@ -39,7 +39,7 @@ class Game:
         self.controller.mouse_move(x, y)
         self.controller.left_mouse_click()
 
-
+    
         time.sleep(0.5)
         self.vision.refresh_frame()
         #self.controller.smooth_move_mouse(10, 10)
