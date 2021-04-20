@@ -28,7 +28,7 @@ packaging==19.2
 pbr==5.4.3
 Pillow==6.2.0
 pluggy==0.13.0
-py==1.8.0
+py==1.10.0
 pylint==2.4.2
 pymongo==3.9.0
 pynput==1.4.4
